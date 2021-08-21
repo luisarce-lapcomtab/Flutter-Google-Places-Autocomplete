@@ -62,14 +62,12 @@ class _MyHomePageState extends State<MyHomePage> {
     _placeApi
         .searchPredictions(query)
         .asStream()
-        .listen((List<Place> predictions) {
-      if (Icons.batch_prediction_sharp != null) {
+        .listen((List<Place> predictions) {     
         setState(() {
           buscando = false;
           _predictions = predictions ?? [];
           //  print('Resultados: ${predictions.length}');
-        });
-      }
+        });      
     });
   }
 
